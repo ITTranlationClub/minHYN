@@ -12,7 +12,7 @@
     <view slot="tab-content-{{index}}" > 
           <view  wx:if="{{item.index==0}}">
             GPT...
-            <button form-type="submit" bindtap="zz" type="primary"> GPT...</button>
+            <button form-type="submit" bindtap="GPTGO" type="primary"> GPT...</button>
           </view>
     <view wx:if="{{item.index==1}}">
        等待开发...

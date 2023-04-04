@@ -19,10 +19,18 @@ Page({
     const index = e.detail.index
     this.setData({activeTab: index})
   },
-  zz(){
-
-    req.get('/wxmini/user/login',{id:99999}).then(res=>{
-
+  GPTGO(){
+    let param={
+      "model": "",
+      "messages": [
+        {
+          "role": "",
+          "content": ""
+        }
+      ]
+    }
+    req.post('chatgpt/askquestion',param).then(res=>{
+        console.log(res)
     })
 
   },

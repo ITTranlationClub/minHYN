@@ -1,4 +1,4 @@
-const http="http://localhost:8089/askme/"
+const http="http://localhost:9051/"
 
 const appid='wxb37c825ffbb78439'
 
@@ -9,7 +9,7 @@ const request = function(url, options) {
           method: options.method,
           data: options.data,
           header: {
-              // 'token': app.globalData.token
+             'askMetoken': wx.getStorageSync('askMetoken')
           },
           success: (res) => { //请求成功
             resolve(res.data);
@@ -44,7 +44,7 @@ module.exports = {
    },
    //登入
    login(data){
-     data.appid=appid
-    return request("/wxmini/user/login",{method:"GET",data})
+     data.appid=appid 
+    return request("wxmini/user/login",{method:"GET",data})
   }
 }
